@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7b1fa2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5c00a8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a1b00;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#FFD54F;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FFB020;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bgGradient)"/>
+  <circle cx="256" cy="256" r="200" fill="url(#amberGlow)"/>
+
+  <g transform="translate(256, 256)">
+    <polygon points="0,-180 45,-55 180,-35 90,55 110,190 0,125 -110,190 -90,55 -180,-35 -45,-55"
+             fill="#FFD54F" opacity="0.15"/>
+    <polygon points="0,-150 40,-45 150,-25 75,45 90,160 0,105 -90,160 -75,45 -150,-25 -40,-45"
+             fill="#FFD54F"/>
+    <polygon points="0,-150 40,-45 60,-30 20,-80" fill="#FFEB3B" opacity="0.6"/>
+  </g>
+
+  <circle cx="100" cy="100" r="8" fill="#FFB020" opacity="0.6"/>
+  <circle cx="412" cy="110" r="6" fill="#FFD54F" opacity="0.5"/>
+  <circle cx="450" cy="350" r="7" fill="#FFB020" opacity="0.5"/>
+  <circle cx="80" cy="420" r="5" fill="#FFD54F" opacity="0.4"/>
+</svg>

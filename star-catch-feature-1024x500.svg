@@ -1,0 +1,65 @@
+<svg width="1024" height="500" viewBox="0 0 1024 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="featureBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#120e2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0b0a1f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b4e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB020;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="500" fill="url(#featureBg)"/>
+  <rect width="1024" height="500" fill="url(#accentGlow)"/>
+
+  <!-- Decorative stars -->
+  <text x="100" y="80" font-size="48" opacity="0.3">✨</text>
+  <text x="920" y="120" font-size="56" opacity="0.25">⭐</text>
+  <text x="150" y="450" font-size="40" opacity="0.2">✨</text>
+  <text x="900" y="420" font-size="52" opacity="0.3">🌟</text>
+
+  <!-- Left side - game elements -->
+  <g transform="translate(150, 180)">
+    <!-- Stars to collect -->
+    <circle cx="0" cy="0" r="32" fill="#FFD54F" opacity="0.9"/>
+    <text x="0" y="12" font-size="36" text-anchor="middle" fill="#2a1b00" font-weight="bold">⭐</text>
+
+    <!-- Bomb to avoid -->
+    <circle cx="100" cy="0" r="32" fill="#FF6B6B" opacity="0.8"/>
+    <text x="100" y="12" font-size="36" text-anchor="middle" fill="white" font-weight="bold">💣</text>
+
+    <!-- Power-up -->
+    <circle cx="200" cy="0" r="32" fill="#8B5CF6" opacity="0.8"/>
+    <text x="200" y="10" font-size="32" text-anchor="middle">⚡</text>
+  </g>
+
+  <!-- Center - Main title and subtitle -->
+  <g transform="translate(512, 100)">
+    <text x="0" y="0" font-size="80" font-weight="bold" text-anchor="middle" fill="#FFD54F" letter-spacing="2">
+      Star Catch
+    </text>
+    <text x="0" y="70" font-size="36" text-anchor="middle" fill="#ce93d8">
+      Yıldız Toplayıcı
+    </text>
+  </g>
+
+  <!-- Right side - features -->
+  <g transform="translate(750, 160)">
+    <text x="0" y="0" font-size="28" fill="#FFFFFF" font-weight="bold">40+ Levels</text>
+    <text x="0" y="45" font-size="28" fill="#FFFFFF" font-weight="bold">6 Game Modes</text>
+    <text x="0" y="90" font-size="28" fill="#FFFFFF" font-weight="bold">Special Powers</text>
+  </g>
+
+  <!-- Bottom action area -->
+  <rect x="180" y="350" width="664" height="100" rx="16" fill="none" stroke="#FFB020" stroke-width="2" opacity="0.6"/>
+
+  <text x="512" y="400" font-size="32" text-anchor="middle" fill="#FFB020" font-weight="bold">
+    Collect stars, break records, have fun!
+  </text>
+
+  <text x="512" y="440" font-size="20" text-anchor="middle" fill="#ce93d8" opacity="0.8">
+    Available on Google Play
+  </text>
+</svg>
