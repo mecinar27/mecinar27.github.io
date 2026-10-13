@@ -36,6 +36,7 @@ Uygulamaya kendi işletmeniz adına girdiğiniz müşteri, tedarikçi ve persone
 
 a) Hesap bilgileri
 • E-posta adresi ve oturum bilgileri (şifreniz Google Firebase tarafından şifrelenmiş olarak saklanır; geliştirici şifrenizi göremez)
+• Google ile giriş yaparsanız Google hesabınızın adı ve e-posta adresi (Google şifreniz Uygulamaya iletilmez)
 
 b) İşletme verileri (sizin girdiğiniz)
 • Ürün, stok, fiyat ve maliyet bilgileri
@@ -57,7 +58,7 @@ e) Reklam ve satın alma
 • Ücretsiz sürümde Google AdMob, reklam gösterimi için cihazın reklam kimliğini ve yaklaşık konum gibi teknik bilgileri işleyebilir
 • Abonelik satın alımları Google Play tarafından yürütülür; kart bilgileriniz Uygulamaya iletilmez, yalnızca aboneliğin geçerli olup olmadığı bilgisi alınır
 
-Uygulama ayrı bir kullanım analizi (analytics) aracı kullanmaz ve verilerinizi profil çıkarma amacıyla işlemez.
+Uygulama kullanım analizi (analytics) aracı kullanmaz, uygulama içindeki davranışlarınızı izlemez ve verilerinizi profil çıkarma amacıyla işlemez.
 
 <hr style="border:0;border-top:1px solid var(--line);margin:4px 0">
 
@@ -75,7 +76,7 @@ Uygulama ayrı bir kullanım analizi (analytics) aracı kullanmaz ve verileriniz
 • Google Firebase / Google Cloud (kimlik doğrulama ve veritabanı) — sunucular yurt dışında bulunabilir; aktarım KVKK md. 9 ve Google'ın veri işleme koşullarındaki standart sözleşmeler çerçevesinde yapılır
 • Google AdMob (yalnızca ücretsiz sürümde reklam)
 • Google Play (abonelik ve ödeme)
-• Ekip paylaşımı: şirket verileriniz, yalnızca sizin davet ettiğiniz e-posta adreslerinin sahipleri tarafından, verdiğiniz rol kadar görüntülenebilir ve değiştirilebilir. Paylaşımı şirket sahibi başlatır ve istediği an sonlandırabilir.
+• Ekip paylaşımı: şirket verileriniz yalnızca sizin davet ettiğiniz e-posta adreslerinin sahiplerine açılır. Davet edilen her üye (görüntüleyici dahil) şirketin tüm kayıtlarını görüntüleyebilir; değişiklik yapma yetkisi verdiğiniz role göre sınırlıdır (ör. depo rolü yalnızca ürün ve stok kayıtlarını değiştirebilir). Paylaşımı şirket sahibi başlatır ve istediği an sonlandırabilir; ekipten çıkarılan üyenin erişimi anında sona erer.
 • T.C. Merkez Bankası: &quot;TCMB kuru&quot; düğmesine bastığınızda yalnızca günün kur listesi istenir; kişisel veri gönderilmez.
 • Paylaştığınız belgeler: PDF, Excel veya WhatsApp ile paylaşım yalnızca sizin seçtiğiniz uygulamaya ve kişiye yapılır.
 
@@ -85,8 +86,8 @@ Verileriniz bunlar dışında hiçbir üçüncü tarafla paylaşılmaz, satılma
 
 <b>5. CİHAZ İZİNLERİ</b>
 
-• Kamera — yalnızca barkod okuturken ve ürün/logo fotoğrafı çekerken; görüntü kaydedilmez, barkod cihazda çözülür
-• Bildirimler — düşük stok ve çek/senet/taksit vade hatırlatmaları; vade hatırlatmaları Ayarlar'dan, tüm bildirimler telefonun ayarlarından kapatılabilir
+• Kamera — yalnızca barkod okuturken ve ürün/logo fotoğrafı çekerken, ilk kullanımda izniniz istenerek; kamera görüntüsü kaydedilmez ve sunucuya gönderilmez, barkod cihazda çözülür
+• Bildirimler ve alarmlar — düşük stok ve çek/senet/taksit vade hatırlatmaları; hatırlatmanın zamanında gelmesi ve telefon yeniden başlatıldığında korunması için tam zamanlı alarm izni kullanılır. Bildirimler telefonda oluşturulur, sunucudan gönderilmez. Vade hatırlatmaları Ayarlar'dan, tüm bildirimler telefonun ayarlarından kapatılabilir
 • Parmak izi / yüz tanıma — uygulama kilidi için; doğrulamayı Android sistemi yapar, biyometrik veriniz Uygulamaya ve sunucuya ulaşmaz
 • İnternet — verilerin bulutla eşitlenmesi
 
@@ -113,10 +114,13 @@ Verileriniz bunlar dışında hiçbir üçüncü tarafla paylaşılmaz, satılma
 <b>8. GÜVENLİK</b>
 
 • Tüm iletişim HTTPS/TLS ile şifrelenir
-• Erişim, sunucu tarafındaki güvenlik kurallarıyla sınırlandırılır: her kullanıcı yalnızca kendi verisine; ekip üyeleri yalnızca rollerinin izin verdiği bölümlere erişebilir
+• Erişim, sunucu tarafındaki güvenlik kurallarıyla sınırlandırılır: her kullanıcı yalnızca kendi verisine erişebilir; ekip üyeleri yalnızca davet edildikleri şirketi görebilir ve yalnızca rollerinin izin verdiği kayıtları değiştirebilir. Bu kurallar sunucuda uygulandığı için uygulama değiştirilse bile atlatılamaz
 • Ekip erişimi için e-posta doğrulaması zorunludur
-• İsteğe bağlı uygulama kilidi (PIN / parmak izi)
-• Uygulama, çalışırken dışarıdan kod indirmez
+• Yeni şifreler en az 8 karakter olmalı ve rakam içermelidir
+• Bulut yedeklerine yalnızca şirket sahibi erişebilir; ekip üyeleri yedekleri göremez ve silemez
+• İsteğe bağlı uygulama kilidi (PIN / parmak izi); art arda hatalı PIN denemelerinde bekleme süresi uygulanır
+• Oluşturulan belgeler (PDF, ekstre, raporlar) içinde kod çalıştırılamaz ve belgeler dış adreslerden içerik yükleyemez
+• Uygulama, çalışırken dışarıdan kod indirmez; telefonda yedekleme yoluyla veri çıkarılması kapalıdır
 
 Hiçbir sistem %100 güvenlik garantisi veremez; bir güvenlik ihlali fark edilmesi halinde KVKK'da öngörülen bildirimler yapılır.
 
